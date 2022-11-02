@@ -160,6 +160,8 @@ export const sanitizeConfig = (config) => {
     },
     resume: {
       fileUrl: config?.resume?.fileUrl || '',
+      profilePhotoUrl: config?.resume?.profilePhotoUrl || '',
+      fullName: config?.resume?.fullName || '',
     },
     skills: config?.skills || [],
     experiences: config?.experiences || [],

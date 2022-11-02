@@ -224,6 +224,8 @@ export interface Education {
 
 export interface Resume {
   fileUrl?: string;
+  fullName?: string;
+  profilePhotoUrl?: string;
 }
 
 export interface Config {

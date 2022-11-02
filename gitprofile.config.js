@@ -2,7 +2,7 @@
 
 const config = {
   github: {
-    username: 'arifszn', // Your GitHub org/user name. (Required)
+    username: 'mrfy', // Your GitHub org/user name. (Required)
     sortBy: 'stars', // stars | updated
     limit: 10, // How many projects to display.
     exclude: {
@@ -11,37 +11,40 @@ const config = {
     },
   },
   social: {
-    linkedin: 'ariful-alam',
-    twitter: 'arif_szn',
+    linkedin: 'mrfy',
+    twitter: '',
     facebook: '',
     instagram: '',
     dribbble: '',
     behance: '',
-    medium: 'arifszn',
-    dev: 'arifszn',
+    medium: '',
+    dev: '',
     stackoverflow: '', // format: userid/username
-    website: 'https://arifszn.github.io',
-    phone: '',
-    email: 'arifulalamszn@gmail.com',
+    website: 'https://mrfy.github.io',
+    phone: '+48 781-646-611',
+    email: 'grzegorzfydrych@gmail.com',
   },
   resume: {
+    fullName: 'Grzegorz Fydrych',
+    profilePhotoUrl: 'profile_photo.png',
     fileUrl: 'resume.pdf', // Empty fileUrl will hide the `Download Resume` button.
   },
   skills: [
-    'PHP',
-    'Laravel',
+    'TypeScript',
     'JavaScript',
-    'React.js',
+    'Angular',
     'Node.js',
-    'Nest.js',
-    'MySQL',
+    'NestJS',
+    'MongoDB',
+    'Microsoft SQL',
     'PostgreSQL',
     'Git',
     'Docker',
-    'PHPUnit',
+    'Kubernetes',
+    'Vue.js',
+    'React.js',
     'CSS',
-    'Antd',
-    'Tailwind',
+    'HTML',
   ],
   experiences: [
     {
@@ -76,7 +79,7 @@ const config = {
   // Display blog posts from your medium or dev account. (Optional)
   blog: {
     source: 'dev', // medium | dev
-    username: 'arifszn', // to hide blog section, keep it empty
+    username: '', // to hide blog section, keep it empty
     limit: 3, // How many posts to display. Max is 10.
   },
   googleAnalytics: {
@@ -88,7 +91,7 @@ const config = {
     snippetVersion: 6,
   },
   themeConfig: {
-    defaultTheme: 'business',
+    defaultTheme: 'corporate',
 
     // Hides the switch in the navbar
     // Useful if you want to support a single color mode

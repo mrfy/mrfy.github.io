@@ -1,8 +1,14 @@
-import PropTypes from 'prop-types';
 import { fallbackImage, skeleton } from '../../helpers/utils';
+
 import LazyImage from '../lazy-image';
+import PropTypes from 'prop-types';
 
 const AvatarCard = ({ profile, loading, avatarRing, resume }) => {
+  let avatarPhoto = profile?.avatar ? profile.avatar : fallbackImage;
+  if (resume.profilePhotoUrl) {
+    avatarPhoto = resume.profilePhotoUrl;
+  }
+
   return (
     <div className="card shadow-lg compact bg-base-100">
       <div className="grid place-items-center py-8">
@@ -27,7 +33,7 @@ const AvatarCard = ({ profile, loading, avatarRing, resume }) => {
             >
               {
                 <LazyImage
-                  src={profile.avatar ? profile.avatar : fallbackImage}
+                  src={avatarPhoto}
                   alt={profile.name}
                   placeholder={skeleton({
                     width: 'w-full',
@@ -45,7 +51,7 @@ const AvatarCard = ({ profile, loading, avatarRing, resume }) => {
               skeleton({ width: 'w-48', height: 'h-8' })
             ) : (
               <span className="text-base-content opacity-70">
-                {profile.name}
+                {resume.fullName ? resume.fullName : profile.name}
               </span>
             )}
           </h5>
@@ -81,6 +87,11 @@ AvatarCard.propTypes = {
   loading: PropTypes.bool.isRequired,
   avatarRing: PropTypes.bool.isRequired,
   resume: PropTypes.shape({
+    fileUrl: PropTypes.string,
+    fullName: PropTypes.string,
+    profilePhotoUrl: PropTypes.string,
+  }),
+  profilePhoto: PropTypes.shape({
     fileUrl: PropTypes.string,
   }),
 };

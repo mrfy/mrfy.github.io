@@ -1,28 +1,30 @@
-import axios from 'axios';
+import '../assets/index.css';
+
 import { Fragment, useCallback, useEffect, useState } from 'react';
-import HeadTagEditor from './head-tag-editor';
-import ErrorPage from './error-page';
-import ThemeChanger from './theme-changer';
-import AvatarCard from './avatar-card';
-import Details from './details';
-import Skill from './skill';
-import Experience from './experience';
-import Education from './education';
-import Project from './project';
-import Blog from './blog';
 import {
   genericError,
   getInitialTheme,
   noConfigError,
   notFoundError,
-  setupHotjar,
-  tooManyRequestError,
   sanitizeConfig,
+  setupHotjar,
   skeleton,
+  tooManyRequestError,
 } from '../helpers/utils';
+
+import AvatarCard from './avatar-card';
+import Blog from './blog';
+import Details from './details';
+import Education from './education';
+import ErrorPage from './error-page';
+import Experience from './experience';
+import HeadTagEditor from './head-tag-editor';
 import { HelmetProvider } from 'react-helmet-async';
+import Project from './project';
 import PropTypes from 'prop-types';
-import '../assets/index.css';
+import Skill from './skill';
+import ThemeChanger from './theme-changer';
+import axios from 'axios';
 import { formatDistance } from 'date-fns';
 
 const bgColor = 'bg-base-300';
@@ -168,6 +170,7 @@ const GitProfile = ({ config }) => {
                         loading={loading}
                         avatarRing={!sanitizedConfig.themeConfig.hideAvatarRing}
                         resume={sanitizedConfig.resume}
+                        profilePhoto={sanitizedConfig.profilePhoto}
                       />
                       <Details
                         profile={profile}
